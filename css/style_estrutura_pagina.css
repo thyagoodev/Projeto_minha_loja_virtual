@@ -1,0 +1,49 @@
+
+/*DEFINA AS CONFIGURAÇÕES EM TODOS ELEMENTO D PAGÍNA*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*DEFINE AS CONFIGURAÇÕES EM TODOS ELEMENTOS DA PÁGINA*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: roboto;
+
+}
+
+/*CRIANDO VARIÁVEIS*/
+:root{
+    --cor01: #1fac1a;
+    --cor02: #fffdfd;
+    --cor03: #1100ff;
+    --branca: #ffffff;
+}
+
+/* FORMATANDO A TAG main PELO ID geral*/
+#geral{
+    margin: 20px;
+}
+
+/*FORMANTANDO O CABEÇALHO*/
+#cabecalho{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    padding: 0px 20px;
+    height: 60px;
+   
+}
+
+/*CONFIGURANDO MENU NA HORIZONTAL*/
+#menu ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+
+}
+
+#menu ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
