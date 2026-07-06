@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Loja</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        .msg {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .link a {
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <h2>Login da Loja</h2>
+
+    <input type="text" id="usuario" placeholder="Digite seu usuário">
+    
+    <input type="password" id="senha" placeholder="Digite sua senha">
+
+    <button onclick="fazerLogin()">Entrar</button>
+
+    <p class="msg" id="msg"></p>
+
+    <div class="link">
+        Não tem conta? <a href="cadastro.html">Criar conta</a>
+    </div>
+
+</div>
+
+<script>
+    function fazerLogin() {
+        const usuario = document.getElementById("usuario").value;
+        const senha = document.getElementById("senha").value;
+        const msg = document.getElementById("msg");
+
+        if (usuario === "" || senha === "") {
+            msg.style.color = "red";
+            msg.innerText = "Preencha todos os campos!";
+            return;
+        }
+
+        if (usuario === "admin" && senha === "123") {
+            msg.style.color = "green";
+            msg.innerText = "Login realizado com sucesso!";
+
+            setTimeout(() => {
+                window.location.href = "../index.html";
+            }, 1000);
+
+        } else {
+            msg.style.color = "red";
+            msg.innerText = "Usuário ou senha incorretos!";
+        }
+    }
+</script>
+
+</body>
+</html>
