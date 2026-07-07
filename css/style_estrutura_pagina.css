@@ -11,13 +11,15 @@
 
 }
 
-/*CRIANDO VARIÁVEIS*/
 :root{
-        --cor01: #aeb1ae;
-        --cor02: #0c0303;
-        --cor03: #00b7ff;
-        --branca: #ffffff;
-    }
+    --cor01: #aeb1ae;
+    --cor02: #0c0303;
+    --cor03: #00b7ff;
+    --branca: #ffffff;
+}
+
+
+
 
 /* FORMATANDO A TAG main PELO ID geral*/
 #geral{
@@ -359,3 +361,4 @@
 #total button:hover{
     background:var(--cor01);
 }
+
