@@ -490,10 +490,27 @@ body{
 
 .btn-banner:hover{
 
-    background:white;
+    background:rgb(255, 254, 254);
 
     transform:translateY(-5px);
 
     box-shadow:0 10px 25px rgba(212,175,55,.5);
 
+}
+
+#menu a:link,
+#menu a:visited{
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: #ffffff !important;
+}
+
+#menu a:hover{
+    color: #c0c0c0 !important;
+}
+
+#menu a i{
+    color: #ffffff !important;
 }
