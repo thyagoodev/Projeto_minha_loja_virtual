@@ -11,88 +11,148 @@
 
 <body>
 
-    <main id="geral">
+<main id="geral">
 
-        <header id="cabecalho">
+<header id="cabecalho">
 
-            <div id="logo">
-                <h1>GUETO ITALLY</h1>
-            </div>
+    <div id="logo">
+        <h1>GUETO ITALLY</h1>
+    </div>
 
-            <nav id="menu">
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="cadastro.html">Cadastro</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="carrinho.html">Carrinho</a></li>
-                </ul>
-            </nav>
+    <nav id="menu">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="carrinho.html">Carrinho</a></li>
+        </ul>
+    </nav>
 
-        </header>
+</header>
 
-        <section id="carrinho">
+<section id="carrinho">
 
-            <h1>Meu Carrinho</h1>
+    <h1>Meu Carrinho</h1>
 
-            <table>
+    <table>
 
-                <tr>
-                    <th>Produto</th>
-                    <th>Imagem</th>
-                    <th>Quantidade</th>
-                    <th>Valor</th>
-                    <th>Subtotal</th>
-                </tr>
+        <tr>
+            <th>Produto</th>
+            <th>Imagem</th>
+            <th>Quantidade</th>
+            <th>Valor</th>
+            <th>Subtotal</th>
+        </tr>
 
-                <tr>
-                    <td>Corrente Cartier 3mm</td>
-                    <td>
-                        <img src="../imagens/prata_925_03.png" alt="Produto">
-                    </td>
-                    <td>1</td>
-                    <td>R$ 197,00</td>
-                    <td>R$ 197,00</td>
-                </tr>
+        <tr>
+            <td>Corrente Cartier 3mm</td>
 
-                <tr>
-                    <td>Pulseira 3x1</td>
-                    <td>
-                        <img src="../imagens/prata_925_13.png" alt="Produto">
-                    </td>
-                    <td>2</td>
-                    <td>R$ 95,00</td>
-                    <td>R$ 190,00</td>
-                </tr>
+            <td>
+                <img src="../imagens/prata_925_03.png" alt="Corrente">
+            </td>
 
-            </table>
+            <td>1</td>
 
-            <div id="total">
+            <td>R$ 197,00</td>
 
-                <p>Subtotal: <strong>R$ 387,00</strong></p>
+            <td>R$ 197,00</td>
 
-                <p>Frete: <strong>R$ 25,00</strong></p>
+        </tr>
 
-                <h2>Total: R$ 412,00</h2>
+        <tr>
 
-                <button>Finalizar Compra</button>
+            <td>Pulseira 3x1</td>
 
-            </div>
+            <td>
+                <img src="../imagens/prata_925_13.png" alt="Pulseira">
+            </td>
 
-        </section>
+            <td>2</td>
 
-        <footer id="rodape">
+            <td>R$ 95,00</td>
 
-            <h2>Gueto Pratas 925 - Sua autoestima começa aqui!</h2>
+            <td>R$ 190,00</td>
 
-            <p>Formas de pagamento: Pix, Cartões de Débito e Crédito.</p>
+        </tr>
 
-            <p>© 2026 - Todos os direitos reservados.</p>
+    </table>
 
-        </footer>
+    <!-- PAINEL LATERAL -->
 
-    </main>
+    <div id="painel-carrinho">
+
+        <!-- RESUMO -->
+
+        <div id="total">
+
+            <h2>Resumo do Pedido</h2>
+
+            <p>Subtotal: <strong>R$ 387,00</strong></p>
+
+            <p>Frete: <strong>R$ 25,00</strong></p>
+
+            <h2>Total: R$ 412,00</h2>
+
+            <button>Finalizar Compra</button>
+
+        </div>
+
+        <!-- FRETE E CUPOM -->
+
+        <div id="extras-carrinho">
+
+            <h3>Calcular Frete</h3>
+
+            <input
+                type="text"
+                id="cep"
+                placeholder="Digite seu CEP">
+
+            <button onclick="calcularFrete()">
+                Calcular Frete
+            </button>
+
+            <p id="valor-frete">
+                Frete: R$ 0,00
+            </p>
+
+            <hr>
+
+            <h3>Cupom de Desconto</h3>
+
+            <input
+                type="text"
+                id="cupom"
+                placeholder="Ex.: GUETO10">
+
+            <button onclick="aplicarCupom()">
+                Aplicar Cupom
+            </button>
+
+            <p id="desconto">
+                Desconto: R$ 0,00
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer id="rodape">
+
+    <h2>Gueto Pratas 925 - Sua autoestima começa aqui!</h2>
+
+    <p>Formas de pagamento: Pix, Cartões de Débito e Crédito.</p>
+
+    <p>© 2026 - Todos os direitos reservados.</p>
+
+</footer>
+
+</main>
+
+<script src="../js/carrinho.js"></script>
 
 </body>
-
 </html>

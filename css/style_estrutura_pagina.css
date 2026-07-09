@@ -17,8 +17,8 @@ body{
 
 /*CRIANDO VARIÁVEIS*/
 :root{
-    --cor01: #aeb1ae;
-    --cor02: #ece5e5;
+    --cor01: #ffffff;
+    --cor02: #a7a0a0;
     --cor03: #000000;
     --branca: #ffffff;
 }
@@ -58,7 +58,7 @@ body{
 }
 
 #logo h1:hover{
-    color:#d4af37;
+    color:#eec304;
 }
 
 /*CONFIGURANDO MENU NA HORIZONTAL*/
@@ -285,7 +285,7 @@ body{
 .campo input{
     height:45px;
     padding:10px;
-    border:1px solid #999;
+    border:1px solid #a58a8a;
     border-radius:5px;
     font-size:16px;
 }
@@ -494,7 +494,7 @@ body{
 
     transform:translateY(-5px);
 
-    box-shadow:0 10px 25px rgba(212,175,55,.5);
+    box-shadow:0 10px 25px rgba(238, 186, 54, 0.5);
 
 }
 
@@ -513,4 +513,164 @@ body{
 
 #menu a i{
     color: #ffffff !important;
+}
+
+/*============================
+      EXTRAS DO CARRINHO
+=============================*/
+
+#extras-carrinho{
+
+    width:350px;
+
+    margin-left:auto;
+
+    margin-top:30px;
+
+    padding:20px;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    background:#fff;
+
+}
+
+#extras-carrinho h3{
+
+    margin-bottom:15px;
+
+    color:#111;
+
+}
+
+#extras-carrinho input{
+
+    width:100%;
+
+    height:45px;
+
+    padding:10px;
+
+    margin-bottom:15px;
+
+    border:1px solid #ccc;
+
+    border-radius:5px;
+
+    font-size:16px;
+
+}
+
+#extras-carrinho button{
+
+    width:100%;
+
+    height:45px;
+
+    background:#111;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    margin-bottom:20px;
+
+}
+
+#extras-carrinho button:hover{
+
+    background:#555;
+
+}
+
+#extras-carrinho p{
+
+    font-size:18px;
+
+    margin-top:10px;
+
+}
+
+/*=================================
+        PAINEL DO CARRINHO
+==================================*/
+
+#carrinho{
+
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:40px;
+
+}
+
+#carrinho h1{
+
+    width:100%;
+    text-align:center;
+
+}
+
+#painel-carrinho{
+
+    width:350px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+#total{
+
+    border:1px solid #ddd;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    background:#fff;
+
+}
+
+#extras-carrinho{
+
+    border:1px solid #ddd;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    background:#fff;
+
+}
+
+#extras-carrinho input{
+
+    width:100%;
+
+    height:45px;
+
+    margin:15px 0;
+
+    padding:10px;
+
+}
+
+#extras-carrinho button{
+
+    width:100%;
+
+    height:45px;
+
 }
