@@ -136,13 +136,13 @@ body{
 }
 
 .card h2 {
-    .card h2{
+    
     color:#111111;
     font-size:34px;
     font-weight:700;
     margin:15px 0;
 }
-}
+
 
 .card button{
     width: 200px;
@@ -375,8 +375,8 @@ body{
     height:45px;
     border:none;
     border-radius:5px;
-    background:var(--cor03);
-    color:#000;
+    background:var(--cor02);
+    color:#ffffff;
     font-size:18px;
     font-weight:bold;
     cursor:pointer;
@@ -673,4 +673,48 @@ body{
 
     height:45px;
 
+}
+
+@media(max-width:768px){
+
+    #cabecalho{
+    
+    flex-direction:column;
+    height:auto;
+    padding:20px;
+    
+    }
+    
+    #menu ul{
+    
+    flex-direction:column;
+    gap:15px;
+    
+    }
+    
+    #cards{
+    
+    width:100%;
+    grid-template-columns:1fr;
+    
+    }
+    
+    #pesquisa input{
+    
+    width:95%;
+    
+    }
+    
+    .banner-overlay h1{
+    
+    font-size:40px;
+    
+    }
+    
+    .banner-overlay h2{
+    
+    font-size:20px;
+    
+    }
+    
 }
