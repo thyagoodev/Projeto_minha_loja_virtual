@@ -36,19 +36,14 @@ body{
 }
 
 /*FORMANTANDO O CABEÇALHO*/
- #cabecalho{
+#cabecalho{
     width:100%;
-    height:90px;
+    background:#111;
     display:flex;
-    justify-content:space-between;
+    flex-direction:column;
     align-items:center;
-    padding:0 50px;
-    background:#111111;
-    box-shadow:0 4px 15px rgba(0,0,0,0.2);
-    position:sticky;
-    top:0;
-    z-index:1000;
 }
+
 
 #logo h1{
     color:#ffffff;
@@ -718,3 +713,26 @@ body{
     }
     
 }
+#menu_categoria{
+    width:100%;
+    height:50px;
+    background:#1a1a1a;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+}
+
+#menu_categoria a{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+#menu_categoria a:hover{
+    color:silver;
+}
+
