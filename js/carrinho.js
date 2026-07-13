@@ -46,17 +46,59 @@ function atualizarTotal() {
 
 //CRIANDO O ARRAY DE ITENS DO CARRIHO
 const itensCarrinho = 350N.parse(localStorage.get('carrinhoSessao')) || []
-const itensCarrinho2 = 350N.parse(sessionStorage.get('carrinhoSessao')) || []
+//const itensCarrinho2 = 350N.parse(sessionStorage.get('carrinhoSessao')) || []
+
+
+
 //FUNÇÃO PARA ADCIONAR UM ITEM
 const addItem = (objItem)=>{
     itensCarrinho.push(objItem)
+
+    sessionStorage.setItem('carrinhoSessao , itenCarrinho')
+
+    listItens()
 }
 
-const listItens = ()=>{
-    itensCarrinho.forEach((elem, i)=>{
-        console.log(`elemento ${i+1} - ${elem}`)
-    })
+    //FUNÇÃO PARA LISTAR OS ITENS DO CARRINHO
+const listItens = () => {
+    const listaItens = JSON.parse(sessionStorage.getItem
+    ('carrinhoSessao'))
+
+    montaTelaCarrinho(listItens)
+
 }
+
+//MONTAR TELA CARRINHO
+const montaTelaCarrinho = (objListaItens)=>{
+    const sectionItensCarrinho = document.querySelector('#itens-carrinho')
+
+    objListaItens.forEach((elem, i) => {
+        const sectionItem = document.createElement('section')
+        sectionItem.setAttribute('class', item)
+
+        const divImgItem = document.createElement('div')
+        divImgItem.setAttribute('class', 'img-item')
+
+        const imgItem = document.createElement('img')
+        imgItem.setAttribute('src', elem.caminho_imagem)
+        imgItem.setAttribute('alt', elem.descricao_produto)
+
+        imgItem.appendChild(imgItem)
+
+        const divDescricaoItens = document.createElement('div')
+        divDescricaoItens.setAttribute('class', 'descricoes-itens')
+
+        const divDescricao = document.createElement('div')
+        divDescricao.setAttribute('class', 'descricao')
+        divDescricao.innerHTML = elem.descricao_produto
+
+        const divValores = document.createElement('div')
+        divValores.setAttribute('class', 'valores')
+
+        const pitem = document.createElement('p')
+        pitem.innerHTML = 'R$ $ {elem.valor_unitario *1}'
+
+    
 
 
 //EXPORTAÇÃO

@@ -170,7 +170,7 @@ const produtos = [
     {
         id_produto: 11,
         descricao_produto: "limpa prata 35ml",
-        valor_unitario: 69.90,
+        valor_unitario: 29.90,
         unidade: "UN",
         caminho_imagem: "imagens/limpa_prata3.png",
         id_secao: 5,
@@ -190,9 +190,39 @@ const produtos = [
     {
         id_produto: 11,
         descricao_produto: " Brincos zircônia 10mm Prata 925",
-        valor_unitario: 29.90,
+        valor_unitario: 39.90,
         unidade: "UN",
         caminho_imagem: "imagens/brinco10_mm.png",
+        id_secao: 5,
+        secao: "Brincos"
+    },
+
+    {
+        id_produto: 11,
+        descricao_produto: " Brincos argola cravejada Prata 925",
+        valor_unitario: 109.90,
+        unidade: "UN",
+        caminho_imagem: "imagens/argola.png",
+        id_secao: 5,
+        secao: "Brincos"
+    },
+
+    {
+        id_produto: 11,
+        descricao_produto: " Brincos argola cravejada premium Prata 925",
+        valor_unitario: 139.90,
+        unidade: "UN",
+        caminho_imagem: "imagens/argola10.png",
+        id_secao: 5,
+        secao: "Brincos"
+    },
+
+    {
+        id_produto: 11,
+        descricao_produto: " Brincos argola cravejada iluminada Prata 925",
+        valor_unitario: 99.90,
+        unidade: "UN",
+        caminho_imagem: "imagens/argola11.png",
         id_secao: 5,
         secao: "Brincos"
     },
