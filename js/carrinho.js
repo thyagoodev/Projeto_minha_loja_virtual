@@ -43,3 +43,21 @@ function atualizarTotal() {
     document.querySelector("#total h2").innerHTML =
         "Total: R$ " + total.toFixed(2).replace(".", ",");
 }
+
+//CRIANDO O ARRAY DE ITENS DO CARRIHO
+const itensCarrinho = 350N.parse(localStorage.get('carrinhoSessao')) || []
+const itensCarrinho2 = 350N.parse(sessionStorage.get('carrinhoSessao')) || []
+//FUNÇÃO PARA ADCIONAR UM ITEM
+const addItem = (objItem)=>{
+    itensCarrinho.push(objItem)
+}
+
+const listItens = ()=>{
+    itensCarrinho.forEach((elem, i)=>{
+        console.log(`elemento ${i+1} - ${elem}`)
+    })
+}
+
+
+//EXPORTAÇÃO
+export{addItem}

@@ -1,10 +1,10 @@
-// IMPORTANDO OS PRODUTOS
+// IMPORTANDO OS PRODUTOS DO ARQUIVO lista_produtos.js
 import { produtos } from './lista_produtos.js'
 
 // ELEMENTOS DO DOM
 const sectionCards = document.querySelector('#cards')
-const ulMenuSecoes = document.querySelector('#menu-secoes')
-const campoPesquisa = document.querySelector('#campo-pesquisa')
+
+const campoPesquisa = document.querySelector('#pesquisaProduto')
 
 // MONTAR CARDS
 const montaCards = (listaProdutos) => {
@@ -12,34 +12,43 @@ const montaCards = (listaProdutos) => {
     sectionCards.innerHTML = ''
 
     listaProdutos.forEach((produto) => {
-
+        // 1. Criando o card principal
         const divCard = document.createElement('div')
         divCard.className = 'card'
 
+        // 2. Criando a imagem
         const img = document.createElement('img')
         img.src = produto.caminho_imagem
         img.alt = produto.descricao_produto
 
+        // 3. Criando a descrição
         const descricao = document.createElement('p')
         descricao.textContent = produto.descricao_produto
 
+        // 4. Criando o preço
         const preco = document.createElement('h2')
-        preco.textContent = `R$ ${produto.valor_unitario.toFixed(2).replace('.', ',')}`
+        preco.textContent = `R$ ${parseFloat(produto.valor_unitario).toFixed(2).replace('.', ',')}`
 
+        // 5. Criando o botão e adicionando o evento de clique
         const botao = document.createElement('button')
         botao.className = 'btn-add'
         botao.textContent = 'Adicionar'
+        
+        botao.addEventListener('click', () => {
+            window.location.href = 'paginas/carrinho.html'
+        })
 
+        // 6. Juntando tudo dentro do divCard (Apenas UMA vez)
         divCard.appendChild(img)
         divCard.appendChild(descricao)
         divCard.appendChild(preco)
         divCard.appendChild(botao)
 
+        // 7. Colocando o card na tela
         sectionCards.appendChild(divCard)
-
     })
-
 }
+
 
 // MOSTRAR TODOS OS PRODUTOS
 const listarProdutos = () => {
@@ -134,6 +143,23 @@ campoPesquisa.addEventListener('keyup', () => {
 
 })
 
+//CAPTURANDO OS CARACTERES DO IMPUT PESQUISA
+//PEGANDO O IMPUT DO DOM
+const imputPesquisa = document.querySelector('#pesquisa')
+
+imputPesquisa.addEventListener('imput',(evt)=>{
+    let txtinput = evt.target.value
+
+    //FILTRANDO OS CARDS A PARTIR DO FILTER E INCLUDES
+    montaCards(produtos.filter(elem => elem.descricao_produto.toLowerCase().includes
+    (txtinput)))
+
+  })
+
+
+
 // INICIAR
 listarProdutos()
-carregaSecoes()
+
+
+
