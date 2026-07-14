@@ -44,27 +44,29 @@ function atualizarTotal() {
         "Total: R$ " + total.toFixed(2).replace(".", ",");
 }
 
-//CRIANDO O ARRAY DE ITENS DO CARRIHO
-const itensCarrinho = 350N.parse(localStorage.get('carrinhoSessao')) || []
-//const itensCarrinho2 = 350N.parse(sessionStorage.get('carrinhoSessao')) || []
+//CRIANDO O ARRAY DE ITENS DO CARRINHO
+const itensCarrinho = JSON.parse(localStorage.getItem("carrinhoSessao")) || [];
+//const itensCarrinho2 = 3SON.parse(sessionStorage.get('carrinhoSessao')) || []
 
 
 
 //FUNÇÃO PARA ADCIONAR UM ITEM
-const addItem = (objItem)=>{
-    itensCarrinho.push(objItem)
+const addItem = (objItem)=> {
+    itensCarrinho.push(objItem);
 
-    sessionStorage.setItem('carrinhoSessao , itenCarrinho')
+ localStorage.setItem(
+    "carrinhoSessao",
+    JSON.stringify(itensCarrinho)
+);
 
-    listItens()
+    listItens();
 }
 
     //FUNÇÃO PARA LISTAR OS ITENS DO CARRINHO
 const listItens = () => {
-    const listaItens = JSON.parse(sessionStorage.getItem
-    ('carrinhoSessao'))
+    const listaItens = JSON.parse(localStorage.getItem("carrinhoSessao")) || [];
 
-    montaTelaCarrinho(listItens)
+    montaTelaCarrinho(listaItens);
 
 }
 
@@ -74,7 +76,7 @@ const montaTelaCarrinho = (objListaItens)=>{
 
     objListaItens.forEach((elem, i) => {
         const sectionItem = document.createElement('section')
-        sectionItem.setAttribute('class', item)
+        sectionItem.setAttribute("class", "item");
 
         const divImgItem = document.createElement('div')
         divImgItem.setAttribute('class', 'img-item')
@@ -83,7 +85,7 @@ const montaTelaCarrinho = (objListaItens)=>{
         imgItem.setAttribute('src', elem.caminho_imagem)
         imgItem.setAttribute('alt', elem.descricao_produto)
 
-        imgItem.appendChild(imgItem)
+        divImgItem.appendChild(imgItem);
 
         const divDescricaoItens = document.createElement('div')
         divDescricaoItens.setAttribute('class', 'descricoes-itens')
@@ -96,7 +98,7 @@ const montaTelaCarrinho = (objListaItens)=>{
         divValores.setAttribute('class', 'valores')
 
         const pitem = document.createElement('p')
-        pitem.innerHTML = 'R$ $ {elem.valor_unitario *1}'
+        pitem.innerHTML = `R$ ${elem.valor_unitario}`
 
     
 

@@ -1,165 +1,93 @@
-// IMPORTANDO OS PRODUTOS DO ARQUIVO lista_produtos.js
-import { produtos } from './lista_produtos.js'
+import { produtos } from "./lista_produtos.js";
 
-// ELEMENTOS DO DOM
-const sectionCards = document.querySelector('#cards')
+const sectionCards = document.querySelector("#cards");
+const inputPesquisa = document.querySelector("#pesquisa"); // Captura o input atualizado
 
-const campoPesquisa = document.querySelector('#pesquisaProduto')
+// Função responsável por desenhar os cards na tela
+function renderizarProdutos(listaDeProdutos) {
+    // Limpa a seção antes de desenhar (evita duplicar)
+    sectionCards.innerHTML = "";
 
-// MONTAR CARDS
-const montaCards = (listaProdutos) => {
-
-    sectionCards.innerHTML = ''
-
-    listaProdutos.forEach((produto) => {
-        // 1. Criando o card principal
-        const divCard = document.createElement('div')
-        divCard.className = 'card'
-
-        // 2. Criando a imagem
-        const img = document.createElement('img')
-        img.src = produto.caminho_imagem
-        img.alt = produto.descricao_produto
-
-        // 3. Criando a descrição
-        const descricao = document.createElement('p')
-        descricao.textContent = produto.descricao_produto
-
-        // 4. Criando o preço
-        const preco = document.createElement('h2')
-        preco.textContent = `R$ ${parseFloat(produto.valor_unitario).toFixed(2).replace('.', ',')}`
-
-        // 5. Criando o botão e adicionando o evento de clique
-        const botao = document.createElement('button')
-        botao.className = 'btn-add'
-        botao.textContent = 'Adicionar'
-        
-        botao.addEventListener('click', () => {
-            window.location.href = 'paginas/carrinho.html'
-        })
-
-        // 6. Juntando tudo dentro do divCard (Apenas UMA vez)
-        divCard.appendChild(img)
-        divCard.appendChild(descricao)
-        divCard.appendChild(preco)
-        divCard.appendChild(botao)
-
-        // 7. Colocando o card na tela
-        sectionCards.appendChild(divCard)
-    })
-}
-
-
-// MOSTRAR TODOS OS PRODUTOS
-const listarProdutos = () => {
-    montaCards(produtos)
-}
-
-// FILTRAR POR CATEGORIA
-const filtroProduto = (idSecao) => {
-
-    if (idSecao === 0) {
-        listarProdutos()
-        return
+    // Se não encontrar nenhum produto na pesquisa
+    if (listaDeProdutos.length === 0) {
+        sectionCards.innerHTML = `
+            <p style="text-align: center; width: 100%; grid-column: 1/-1; font-weight: bold; padding: 50px 0;">
+                Nenhuma prata encontrada com esse nome... 💎
+            </p>
+        `;
+        return;
     }
 
-    const filtrados = produtos.filter(produto => produto.id_secao === idSecao)
+    // Monta os cards da loja
+    listaDeProdutos.forEach((produto) => {
+        const card = document.createElement("div");
+        card.className = "card";
 
-    montaCards(filtrados)
+        card.innerHTML = `
+            <span class="novo">Novo</span>
 
+            <img src="${produto.caminho_imagem}" alt="${produto.descricao_produto}">
+
+            <p>${produto.descricao_produto}</p>
+
+            <h2>
+                R$ ${produto.valor_unitario.toFixed(2).replace(".", ",")}
+            </h2>
+
+            <button class="btnAdicionar">
+                Adicionar
+            </button>
+        `;
+
+        const botao = card.querySelector("button");
+        botao.addEventListener("click", () => adicionarCarrinho(produto));
+
+        sectionCards.appendChild(card);
+    });
 }
 
-// CARREGAR MENU
-const carregaSecoes = () => {
+// Função para adicionar o produto ao carrinho
+function adicionarCarrinho(produto){
+    let carrinho =
+        JSON.parse(localStorage.getItem("carrinhoSessao")) || [];
 
-    ulMenuSecoes.innerHTML = '';
+    const existe = carrinho.find(
+        item => item.id_produto === produto.id_produto
+    );
 
-    // BOTÃO TODOS
-    const liTodos = document.createElement('li')
+    if(existe){
+        existe.quantidade++;
+    } else {
+        carrinho.push({
+            ...produto,
+            quantidade: 1
+        });
+    }
 
-    const aTodos = document.createElement('a')
-    aTodos.href = '#'
-    aTodos.className = 'lnk-secao'
-    aTodos.textContent = 'Todos'
+    localStorage.setItem(
+        "carrinhoSessao",
+        JSON.stringify(carrinho)
+    );
 
-    aTodos.addEventListener('click', (e) => {
-        e.preventDefault()
-        listarProdutos()
-    })
-
-    liTodos.appendChild(aTodos)
-    ulMenuSecoes.appendChild(liTodos)
-
-    // REMOVE CATEGORIAS REPETIDAS
-    const categorias = []
-
-    produtos.forEach((produto) => {
-
-        if (!categorias.some(cat => cat.id_secao === produto.id_secao)) {
-            categorias.push({
-                id_secao: produto.id_secao,
-                secao: produto.secao
-            })
-        }
-
-    })
-
-    // CRIA MENU
-    categorias.forEach((categoria) => {
-
-        const li = document.createElement('li')
-
-        const a = document.createElement('a')
-        a.href = '#'
-        a.className = 'lnk-secao'
-        a.textContent = categoria.secao
-
-        a.addEventListener('click', (e) => {
-
-            e.preventDefault()
-
-            filtroProduto(categoria.id_secao)
-
-        })
-
-        li.appendChild(a)
-
-        ulMenuSecoes.appendChild(li)
-
-    })
-
+    // Redireciona direto para a página do carrinho de forma segura
+    window.location.href = "paginas/carrinho.html";
 }
 
-// PESQUISA
-campoPesquisa.addEventListener('keyup', () => {
+// --- LÓGICA DA BARRA DE PESQUISA (LIVE FILTER) ---
+if (inputPesquisa) {
+    inputPesquisa.addEventListener("input", (evento) => {
+        // Pega o texto digitado e transforma em letras minúsculas (para ignorar maiúsculas/minúsculas)
+        const termoPesquisa = evento.target.value.toLowerCase().trim();
 
-    const texto = campoPesquisa.value.toLowerCase()
+        // Filtra a lista original de produtos com base no termo digitado
+        const produtosFiltrados = produtos.filter((produto) => {
+            return produto.descricao_produto.toLowerCase().includes(termoPesquisa);
+        });
 
-    const resultado = produtos.filter(produto =>
-        produto.descricao_produto.toLowerCase().includes(texto)
-    )
+        // Atualiza a tela com as pratas filtradas
+        renderizarProdutos(produtosFiltrados);
+    });
+}
 
-    montaCards(resultado)
-
-})
-
-//CAPTURANDO OS CARACTERES DO IMPUT PESQUISA
-//PEGANDO O IMPUT DO DOM
-const imputPesquisa = document.querySelector('#pesquisa')
-
-imputPesquisa.addEventListener('imput',(evt)=>{
-    let txtinput = evt.target.value
-
-    //FILTRANDO OS CARDS A PARTIR DO FILTER E INCLUDES
-    montaCards(produtos.filter(elem => elem.descricao_produto.toLowerCase().includes
-    (txtinput)))
-
-  })
-
-
-
-// INICIAR
-listarProdutos()
-
-
-
+// Inicializa a página mostrando todos os produtos originais
+renderizarProdutos(produtos);

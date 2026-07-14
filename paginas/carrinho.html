@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho - Gueto Itally</title>
-
     <link rel="stylesheet" href="../css/style_estrutura_pagina.css">
 </head>
 
@@ -14,11 +13,9 @@
 <main id="geral">
 
 <header id="cabecalho">
-
     <div id="logo">
         <h1>GUETO ITALLY</h1>
     </div>
-
     <nav id="menu">
         <ul>
             <li><a href="../index.html">Home</a></li>
@@ -28,131 +25,56 @@
             <li><a href="carrinho.html">Carrinho</a></li>
         </ul>
     </nav>
-
 </header>
 
 <section id="carrinho">
-
     <h1>Meu Carrinho</h1>
 
     <table>
-
-        <tr>
-            <th>Produto</th>
-            <th>Imagem</th>
-            <th>Quantidade</th>
-            <th>Valor</th>
-            <th>Subtotal</th>
-        </tr>
-
-        <tr>
-            <td>Corrente Cartier 3mm</td>
-
-            <td>
-                <img src="../imagens/prata_925_03.png" alt="Corrente">
-            </td>
-
-            <td>1</td>
-
-            <td>R$ 197,00</td>
-
-            <td>R$ 197,00</td>
-
-        </tr>
-
-        <tr>
-
-            <td>Pulseira 3x1</td>
-
-            <td>
-                <img src="../imagens/prata_925_13.png" alt="Pulseira">
-            </td>
-
-            <td>2</td>
-
-            <td>R$ 95,00</td>
-
-            <td>R$ 190,00</td>
-
-        </tr>
-
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Imagem</th>
+                <th>Quantidade</th>
+                <th>Valor</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody id="corpo-tabela"></tbody>
     </table>
 
-    <!-- PAINEL LATERAL -->
-
     <div id="painel-carrinho">
-
-        <!-- RESUMO -->
-
         <div id="total">
-
             <h2>Resumo do Pedido</h2>
-
-            <p>Subtotal: <strong>R$ 387,00</strong></p>
-
-            <p>Frete: <strong>R$ 25,00</strong></p>
-
-            <h2>Total: R$ 412,00</h2>
-
-            <button>Finalizar Compra</button>
-
+            <p>Subtotal: <strong id="resumo-subtotal">R$ 0,00</strong></p>
+            <p>Frete: <strong id="resumo-frete">R$ 0,00</strong></p>
+            <h2 id="resumo-total">Total: R$ 0,00</h2>
+            <button onclick="finalizarCompra()">Finalizar Compra</button>
         </div>
-
-        <!-- FRETE E CUPOM -->
 
         <div id="extras-carrinho">
-
             <h3>Calcular Frete</h3>
-
-            <input
-                type="text"
-                id="cep"
-                placeholder="Digite seu CEP">
-
-            <button onclick="calcularFrete()">
-                Calcular Frete
-            </button>
-
-            <p id="valor-frete">
-                Frete: R$ 0,00
-            </p>
-
+            <input type="text" id="cep" placeholder="Digite seu CEP">
+            <button onclick="calcularFrete()">Calcular Frete</button>
+            <p id="valor-frete">Frete: R$ 0,00</p>
             <hr>
-
             <h3>Cupom de Desconto</h3>
-
-            <input
-                type="text"
-                id="cupom"
-                placeholder="Ex.: GUETO10">
-
-            <button onclick="aplicarCupom()">
-                Aplicar Cupom
-            </button>
-
-            <p id="desconto">
-                Desconto: R$ 0,00
-            </p>
-
+            <input type="text" id="cupom" placeholder="Ex.: GUETO10">
+            <button onclick="aplicarCupom()">Aplicar Cupom</button>
+            <p id="desconto">Desconto: R$ 0,00</p>
         </div>
-
     </div>
-
 </section>
 
 <footer id="rodape">
-
     <h2>Gueto Pratas 925 - Sua autoestima começa aqui!</h2>
-
     <p>Formas de pagamento: Pix, Cartões de Débito e Crédito.</p>
-
     <p>© 2026 - Todos os direitos reservados.</p>
-
 </footer>
 
 </main>
 
-<script src="../js/carrinho.js"></script>
+<script src="../js/carrinho2.js"></script>
 
 </body>
 </html>

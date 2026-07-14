@@ -20,7 +20,7 @@ const produtos = [
     },
 
     {
-        id_produto: 1,
+        id_produto: 3,
         descricao_produto: "Corrente Grumet 3mm 80cm",
         valor_unitario: 289.90,
         unidade: "UN",
@@ -30,7 +30,7 @@ const produtos = [
     },
 
     {
-        id_produto: 1,
+        id_produto: 4,
         descricao_produto: "Corrente Grumet 4mm 70cm",
         valor_unitario: 289.90,
         unidade: "UN",
@@ -40,7 +40,7 @@ const produtos = [
     },
 
     {
-        id_produto: 1,
+        id_produto: 5,
         descricao_produto: "Corrente Grumet 4mm 80cm",
         valor_unitario: 289.90,
         unidade: "UN",
@@ -51,7 +51,7 @@ const produtos = [
 
 
     {
-        id_produto: 1,
+        id_produto: 6,
         descricao_produto: "Corrente Grumet 6mm 70cm Prata 925",
         valor_unitario: 569.90,
         unidade: "UN",
@@ -61,7 +61,7 @@ const produtos = [
     },
 
     {
-        id_produto: 1,
+        id_produto: 7,
         descricao_produto: " kit Corrente e pulseira 7mm 70cm Prata 925",
         valor_unitario: 979.90,
         unidade: "UN",
@@ -73,7 +73,7 @@ const produtos = [
 
 
     {
-        id_produto: 2,
+        id_produto: 8,
         descricao_produto: "Corrente Veneziana Prata 925",
         valor_unitario: 169.90,
         unidade: "UN",
@@ -82,7 +82,7 @@ const produtos = [
         secao: "Correntes"
     },
     {
-        id_produto: 3,
+        id_produto: 9,
         descricao_produto: "Corrente Cartier Prata 925",
         valor_unitario: 189.90,
         unidade: "UN",
@@ -91,7 +91,7 @@ const produtos = [
         secao: "Correntes"
     },
     {
-        id_produto: 4,
+        id_produto: 10,
         descricao_produto: "Corrente Elo Português Prata 925",
         valor_unitario: 219.90,
         unidade: "UN",
@@ -100,7 +100,7 @@ const produtos = [
         secao: "Correntes"
     },
     {
-        id_produto: 5,
+        id_produto: 11,
         descricao_produto: "Corrente Pipoca Prata 925",
         valor_unitario: 149.90,
         unidade: "UN",
@@ -109,7 +109,7 @@ const produtos = [
         secao: "Masculinos"
     },
     {
-        id_produto: 6,
+        id_produto: 12,
         descricao_produto: "Pulseira Grumet 5mm 21 cm Prata 925",
         valor_unitario: 539.90,
         unidade: "UN",
@@ -119,7 +119,7 @@ const produtos = [
     },
     
     {
-        id_produto: 7,
+        id_produto: 13,
         descricao_produto: "Pulseira grumet 4mm 21cm Prata 925",
         valor_unitario: 99.90,
         unidade: "UN",
@@ -129,7 +129,7 @@ const produtos = [
     },
     
     {
-        id_produto: 8,
+        id_produto: 14,
         descricao_produto: "Brinco Argola Pequena Prata 925",
         valor_unitario: 49.90,
         unidade: "PAR",
@@ -138,7 +138,7 @@ const produtos = [
         secao: "Brincos"
     },
     {
-        id_produto: 9,
+        id_produto: 15,
         descricao_produto: "Brinco Argola Média Prata 925",
         valor_unitario: 69.90,
         unidade: "PAR",
@@ -149,7 +149,7 @@ const produtos = [
     
    
     {
-        id_produto: 10,
+        id_produto: 16,
         descricao_produto: "Pingente Cruz Prata 925",
         valor_unitario: 59.90,
         unidade: "UN",
@@ -158,7 +158,7 @@ const produtos = [
         secao: "Pingentes"
     },
     {
-        id_produto: 11,
+        id_produto: 17,
         descricao_produto: "Pingente Espírito Santo Prata 925",
         valor_unitario: 69.90,
         unidade: "UN",
@@ -168,7 +168,7 @@ const produtos = [
     },
 
     {
-        id_produto: 11,
+        id_produto: 18,
         descricao_produto: "limpa prata 35ml",
         valor_unitario: 29.90,
         unidade: "UN",
@@ -178,7 +178,7 @@ const produtos = [
     },
 
     {
-        id_produto: 11,
+        id_produto: 19,
         descricao_produto: " Brincos zircônia 8mm Prata 925",
         valor_unitario: 29.90,
         unidade: "UN",
@@ -188,7 +188,7 @@ const produtos = [
     },
 
     {
-        id_produto: 11,
+        id_produto: 20,
         descricao_produto: " Brincos zircônia 10mm Prata 925",
         valor_unitario: 39.90,
         unidade: "UN",
@@ -198,7 +198,7 @@ const produtos = [
     },
 
     {
-        id_produto: 11,
+        id_produto: 21,
         descricao_produto: " Brincos argola cravejada Prata 925",
         valor_unitario: 109.90,
         unidade: "UN",
@@ -208,7 +208,7 @@ const produtos = [
     },
 
     {
-        id_produto: 11,
+        id_produto: 22,
         descricao_produto: " Brincos argola cravejada premium Prata 925",
         valor_unitario: 139.90,
         unidade: "UN",
@@ -218,7 +218,7 @@ const produtos = [
     },
 
     {
-        id_produto: 11,
+        id_produto: 23,
         descricao_produto: " Brincos argola cravejada iluminada Prata 925",
         valor_unitario: 99.90,
         unidade: "UN",
