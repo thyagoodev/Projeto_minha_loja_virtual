@@ -37,19 +37,42 @@ function renderizarCarrinho() {
         subtotalGeral += subtotalItem;
 
         corpoTabela.innerHTML += `
-            <tr>
-                <td>${produto.descricao_produto}</td>
-                <td>
-                    <img src="${caminhoCorrigido}" alt="${produto.descricao_produto}" width="60">
-                </td>
-                <td>
-                    <button onclick="alterarQuantidade(${index}, -1)" style="padding: 2px 8px; cursor: pointer;">-</button>
-                    <span style="margin: 0 10px; font-weight: bold;">${produto.quantidade}</span>
-                    <button onclick="alterarQuantidade(${index}, 1)" style="padding: 2px 8px; cursor: pointer;">+</button>
-                </td>
-                <td>R$ ${produto.valor_unitario.toFixed(2).replace(".", ",")}</td>
-                <td>R$ ${subtotalItem.toFixed(2).replace(".", ",")}</td>
-            </tr>
+
+        <tr>
+        <td>${produto.descricao_produto}</td>
+    
+        <td>
+            <img src="${caminhoCorrigido}" alt="${produto.descricao_produto}" width="60">
+        </td>
+    
+        <td>
+            <input
+                type="number"
+                min="1"
+                step="1"
+                value="${produto.quantidade}"
+                onchange="alterarQuantidade(${index}, this.value)"
+                style="width:60px; text-align:center;"
+            />
+        </td>
+    
+        <td>
+            R$ ${produto.valor_unitario.toFixed(2).replace(".", ",")}
+        </td>
+    
+        <td>
+            R$ ${subtotalItem.toFixed(2).replace(".", ",")}
+        </td>
+    
+        <td>
+            <button
+                class="btn-remover"
+                onclick="removerProduto(${index})">
+                🗑️
+            </button>
+        </td>
+    
+    </tr>
         `;
     });
 
@@ -57,14 +80,23 @@ function renderizarCarrinho() {
 }
 
 // Controla os botões de + e -
-window.alterarQuantidade = function(index, alteracao) {
-    carrinho[index].quantidade += alteracao;
+window.alterarQuantidade = function(index, novaQuantidade) {
 
-    if (carrinho[index].quantidade <= 0) {
-        carrinho.splice(index, 1);
+    novaQuantidade = parseInt(novaQuantidade);
+
+    if (isNaN(novaQuantidade) || novaQuantidade < 1) {
+        alert("Digite apenas números inteiros maiores que zero.");
+        renderizarCarrinho();
+        return;
     }
 
-    localStorage.setItem("carrinhoSessao", JSON.stringify(carrinho));
+    carrinho[index].quantidade = novaQuantidade;
+
+    localStorage.setItem(
+        "carrinhoSessao",
+        JSON.stringify(carrinho)
+    );
+
     renderizarCarrinho();
 }
 
@@ -109,13 +141,31 @@ window.aplicarCupom = function() {
 
 // Finaliza a compra limpando o carrinho
 window.finalizarCompra = function() {
+
     if (carrinho.length === 0) {
         alert("Seu carrinho está vazio!");
         return;
     }
-    alert("Compra realizada com sucesso! Obrigado por comprar na Gueto Itally 925! 💎🔥");
-    localStorage.removeItem("carrinhoSessao");
-    window.location.href = "../index.html";
+
+    window.location.href = "finalizar_compra.html";
 }
+
+window.removerProduto = function(index) {
+
+    if(confirm("Deseja remover este produto do carrinho?")){
+
+        carrinho.splice(index, 1);
+
+        localStorage.setItem(
+            "carrinhoSessao",
+            JSON.stringify(carrinho)
+        );
+
+        renderizarCarrinho();
+
+    }
+
+}
+
 
 renderizarCarrinho();

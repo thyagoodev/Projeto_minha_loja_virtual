@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - Gueto Itally</title>
+
+    <link rel="stylesheet" href="../css/style_checkout.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        GUETO ITALLY 925
+    </div>
+
+    <nav>
+
+        <a href="../index.html">Home</a>
+
+        <a href="sobre.html">Sobre</a>
+
+        <a href="cadastro.html">Cadastro</a>
+
+        <a href="login.html">Login</a>
+
+        <a href="carrinho.html">Carrinho</a>
+
+    </nav>
+
+</header>
+
+
+<main class="checkout">
+
+<section class="dados">
+
+<h1>Finalizar Compra</h1>
+
+<div class="bloco">
+
+<h2>Dados Pessoais</h2>
+
+<input type="text" placeholder="Nome Completo">
+
+<input type="email" placeholder="E-mail">
+
+<input type="text" placeholder="CPF">
+
+<input type="text" placeholder="Telefone">
+
+</div>
+
+
+<div class="bloco">
+
+<h2>Endereço</h2>
+
+<input id="cep" type="text" placeholder="CEP">
+
+<input id="rua" type="text" placeholder="Rua">
+
+<input type="text" placeholder="Número">
+
+<input type="text" placeholder="Complemento">
+
+<input id="bairro" type="text" placeholder="Bairro">
+
+<input id="cidade" type="text" placeholder="Cidade">
+
+<input id="estado" type="text" placeholder="Estado">
+
+</div>
+
+
+<div class="bloco">
+
+<h2>Forma de Entrega</h2>
+
+<label>
+
+<input type="radio" name="entrega" checked>
+
+PAC - R$18,90
+
+</label>
+
+<label>
+
+<input type="radio" name="entrega">
+
+SEDEX - R$35,90
+
+</label>
+
+<label>
+
+<input type="radio" name="entrega">
+
+Retirar na Loja
+
+</label>
+
+</div>
+
+
+<div class="bloco">
+
+<h2>Pagamento</h2>
+
+<select>
+
+<option>PIX</option>
+
+<option>Cartão de Crédito</option>
+
+<option>Cartão de Débito</option>
+
+<option>Boleto</option>
+
+</select>
+
+<input type="text" placeholder="Número do Cartão">
+
+<input type="text" placeholder="Nome impresso no cartão">
+
+<div class="linha">
+
+<input type="text" placeholder="Validade">
+
+<input type="text" placeholder="CVV">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<aside class="resumo">
+
+<h2>Resumo do Pedido</h2>
+
+<p>
+
+Subtotal
+
+<span id="subtotal">
+
+R$ 0,00
+
+</span>
+
+</p>
+
+<p>
+
+Frete
+
+<span id="frete">
+
+R$ 0,00
+
+</span>
+
+</p>
+
+<p>
+
+Desconto
+
+<span id="desconto">
+
+R$ 0,00
+
+</span>
+
+</p>
+
+<hr>
+
+<h1 id="total">
+
+Total: R$ 0,00
+
+</h1>
+
+<button id="confirmar">
+
+Confirmar Pedido
+
+</button>
+
+</aside>
+
+</main>
+
+<script src="../js/checkout.js"></script>
+
+</body>
+
+</html>
