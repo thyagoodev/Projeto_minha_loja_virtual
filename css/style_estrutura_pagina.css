@@ -1,4 +1,3 @@
-
 /*DEFINA AS CONFIGURAÇÕES EM TODOS ELEMENTO D PAGÍNA*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -23,18 +22,15 @@ body{
     --branca: #ffffff;
 }
 
-
-
 /* FORMATANDO A TAG main PELO ID geral*/
 #geral{
-    margin: 20px;
+    margin: 20px 0px; /* Mantém margem em cima e embaixo, zera nas laterais */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;   
 }
-
 /*FORMANTANDO O CABEÇALHO*/
 #cabecalho{
     width:100%;
@@ -43,7 +39,6 @@ body{
     flex-direction:column;
     align-items:center;
 }
-
 
 #logo h1{
     color:#ffffff;
@@ -61,14 +56,11 @@ body{
     display: flex;
     gap: 30px;
     list-style: none;
-
 }
 
 #menu ul img{
     width: 250px;
     height: 25px;
-
-
 }
 
 /*FORMATANDO SECTION pesquisa*/
@@ -128,7 +120,7 @@ body{
 .card img {
     width: 300px;
     height: 390px;
-    margin: 37 0px;
+    margin: 37px 0px;
 }
 
 .card p {
@@ -138,13 +130,11 @@ body{
 }
 
 .card h2 {
-    
     color:#111111;
     font-size:34px;
     font-weight:700;
     margin:15px 0;
 }
-
 
 .card button{
     width: 200px;
@@ -171,10 +161,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
-
-
 
 /*FORMATANDO LINKS*/
 #menu a:link{
@@ -191,22 +178,6 @@ body{
     letter-spacing: 5px;
     text-decoration: none;
     color: var(--cor02);
-}
-
-#menu a:hover{
-    font-size: 1.6em;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    text-decoration: none;
-    color: var(--cor02);
-}
-
-#menu a:hover{
-    font-size: 1.6em;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    text-decoration: none;
-    color: var(--cor03);
 }
 
 #menu a:hover{
@@ -316,16 +287,21 @@ body{
 }
 
 /*=========================
-        CARRINHO
+         CARRINHO
 ==========================*/
 
 #carrinho{
     width:1000px;
     margin:40px auto;
     padding:30px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:40px;
 }
 
 #carrinho h1{
+    width:100%;
     text-align:center;
     color:var(--cor02);
     margin-bottom:30px;
@@ -357,9 +333,10 @@ body{
 #total{
     width:350px;
     margin-left:auto;
-    border:1px solid #ccc;
+    border:1px solid #ddd;
     padding:20px;
     border-radius:10px;
+    background:#fff;
 }
 
 #total p{
@@ -392,116 +369,92 @@ body{
             BANNER
 ===============================*/
 
-#banner{
-
-    width:100%;
-    height:600px;
-
-    background-image:url("../imagens/gueto_lojaa.png");
-
-    background-size:cover;
-    background-position:center;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    position:relative;
+#banner {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; 
 }
 
-#banner::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:100%;
-    height:100%;
-
-    background:rgba(0,0,0,.60);
-
+#banner .banner-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 0; /* Totalmente no fundo */
 }
 
-.banner-overlay{
-
-    position:relative;
-
-    text-align:center;
-
-    color:white;
-
-    z-index:2;
-
+#banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.60);
+    z-index: 1; /* Camada escura por cima do vídeo */
 }
 
-.banner-overlay h1{
-
-    font-size:70px;
-
-    letter-spacing:12px;
-
-    font-weight:900;
-
-    text-transform:uppercase;
-
-    margin-bottom:15px;
-
+.banner-overlay {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    width: 100%;
+    height: 100%; /* Ocupa a altura toda do banner */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente o texto e o botão */
+    align-items: center;
+    padding: 0 20px;
 }
 
-.banner-overlay h2{
-
-    font-size:32px;
-
-    color:#fafaf8;
-
-    letter-spacing:8px;
-
-    margin-bottom:25px;
-
+.banner-overlay h1 {
+    font-size: 70px;
+    letter-spacing: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 15px;
 }
 
-.banner-overlay p{
-
-    font-size:22px;
-
-    margin-bottom:40px;
-
+.banner-overlay h2 {
+    font-size: 32px;
+    color: #fafaf8;
+    letter-spacing: 8px;
+    margin-bottom: 25px;
 }
 
-.btn-banner{
-
-    display:inline-block;
-
-    padding:18px 45px;
-
-    background:#f8f8f8;
-
-    color:#111;
-
-    text-decoration:none;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    border-radius:40px;
-
-    transition:.4s;
-
+.banner-overlay p {
+    font-size: 22px;
+    margin-bottom: 40px;
 }
 
-.btn-banner:hover{
+.btn-banner {
+    display: inline-block;
+    padding: 18px 45px;
+    background: #f8f8f8;
+    color: #111;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 40px;
+    transition: .4s;
+}
 
-    background:rgb(255, 254, 254);
-
-    transform:translateY(-5px);
-
-    box-shadow:0 10px 25px rgba(238, 186, 54, 0.5);
-
+.btn-banner:hover {
+    background: rgb(255, 254, 254);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(238, 186, 54, 0.5);
 }
 
 #menu a:link,
-#menu a:visited{
+#menu a:visited {
     font-size: 1.5em;
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -509,11 +462,11 @@ body{
     color: #ffffff !important;
 }
 
-#menu a:hover{
+#menu a:hover {
     color: #c0c0c0 !important;
 }
 
-#menu a i{
+#menu a i {
     color: #ffffff !important;
 }
 
@@ -521,257 +474,139 @@ body{
       EXTRAS DO CARRINHO
 =============================*/
 
-#extras-carrinho{
-
-    width:350px;
-
-    margin-left:auto;
-
-    margin-top:30px;
-
-    padding:20px;
-
-    border:1px solid #ccc;
-
-    border-radius:10px;
-
-    background:#fff;
-
+#extras-carrinho {
+    width: 350px;
+    margin-left: auto;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
 }
 
-#extras-carrinho h3{
-
-    margin-bottom:15px;
-
-    color:#111;
-
+#extras-carrinho h3 {
+    margin-bottom: 15px;
+    color: #111;
 }
 
-#extras-carrinho input{
-
-    width:100%;
-
-    height:45px;
-
-    padding:10px;
-
-    margin-bottom:15px;
-
-    border:1px solid #ccc;
-
-    border-radius:5px;
-
-    font-size:16px;
-
+#extras-carrinho input {
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
-#extras-carrinho button{
-
-    width:100%;
-
-    height:45px;
-
-    background:#111;
-
-    color:#fff;
-
-    border:none;
-
-    border-radius:5px;
-
-    cursor:pointer;
-
-    font-size:16px;
-
-    margin-bottom:20px;
-
+#extras-carrinho button {
+    width: 100%;
+    height: 45px;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
-#extras-carrinho button:hover{
-
-    background:#555;
-
+#extras-carrinho button:hover {
+    background: #555;
 }
 
-#extras-carrinho p{
-
-    font-size:18px;
-
-    margin-top:10px;
-
+#extras-carrinho p {
+    font-size: 18px;
+    margin-top: 10px;
 }
 
 /*=================================
         PAINEL DO CARRINHO
 ==================================*/
 
-#carrinho{
-
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:40px;
-
-}
-
-#carrinho h1{
-
-    width:100%;
-    text-align:center;
-
-}
-
-#painel-carrinho{
-
-    width:350px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:20px;
-
-}
-
-#total{
-
-    border:1px solid #ddd;
-
-    padding:20px;
-
-    border-radius:10px;
-
-    background:#fff;
-
-}
-
-#extras-carrinho{
-
-    border:1px solid #ddd;
-
-    padding:20px;
-
-    border-radius:10px;
-
-    background:#fff;
-
-}
-
-#extras-carrinho input{
-
-    width:100%;
-
-    height:45px;
-
-    margin:15px 0;
-
-    padding:10px;
-
-}
-
-#extras-carrinho button{
-
-    width:100%;
-
-    height:45px;
-
+#painel-carrinho {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 @media(max-width:768px){
-
-    #cabecalho{
-    
-    flex-direction:column;
-    height:auto;
-    padding:20px;
-    
+    #cabecalho {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
     }
     
-    #menu ul{
-    
-    flex-direction:column;
-    gap:15px;
-    
+    #menu ul {
+        flex-direction: column;
+        gap: 15px;
     }
     
-    #cards{
-    
-    width:100%;
-    grid-template-columns:1fr;
-    
+    #cards {
+        width: 100%;
+        grid-template-columns: 1fr;
     }
     
-    #pesquisa input{
-    
-    width:95%;
-    
+    #pesquisa input {
+        width: 95%;
     }
     
-    .banner-overlay h1{
-    
-    font-size:40px;
-    
+    .banner-overlay h1 {
+        font-size: 40px;
     }
     
-    .banner-overlay h2{
-    
-    font-size:20px;
-    
+    .banner-overlay h2 {
+        font-size: 20px;
     }
-    
-}
-#menu_categoria{
-    width:100%;
-    height:50px;
-    background:#1a1a1a;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:35px;
 }
 
-#menu_categoria a{
-    color:#fff;
-    text-decoration:none;
-    font-size:15px;
-    font-weight:bold;
-    text-transform:uppercase;
+#menu_categoria {
+    width: 100%;
+    height: 50px;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
 }
 
-#menu_categoria a:hover{
-    color:silver;
+#menu_categoria a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
+#menu_categoria a:hover {
+    color: silver;
+}
 
-.card{
+.card {
     border-radius: 12px;
     overflow: hidden;
-    transition: transform .35s ease,
-                box-shadow .35s ease;
+    transition: transform .35s ease, box-shadow .35s ease;
 }
 
-.card:hover{
+.card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(0,0,0,.18);
 }
 
-.card img{
+.card img {
     transition: transform .35s ease;
 }
 
-.card:hover img{
+.card:hover img {
     transform: scale(1.08);
 }
 
-.card button{
+.card button {
     transition: .3s;
 }
 
-.card:hover button{
-    background:#1f6fff;
-    color:#fff;
+.card:hover button {
+    background: #1f6fff;
+    color: #fff;
 }
-
-
-

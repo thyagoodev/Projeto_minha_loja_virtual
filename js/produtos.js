@@ -2,9 +2,28 @@ import { produtos } from "./lista_produtos.js";
 
 const sectionCards = document.querySelector("#cards");
 const inputPesquisa = document.querySelector("#pesquisa"); // Captura o input atualizado
+const botoesCategoria = document.querySelectorAll("#menu_categoria a");
+
 
 // Função responsável por desenhar os cards na tela
 function renderizarProdutos(listaDeProdutos) {
+
+    function filtrarCategoria(categoria) {
+
+        if (categoria === "todos") {
+            renderizarProdutos(produtos);
+            return;
+        }
+    
+        const lista = produtos.filter(produto =>
+            produto.secao.toLowerCase() === categoria.toLowerCase()
+        );
+    
+        renderizarProdutos(lista);
+    }
+
+
+
     // Limpa a seção antes de desenhar (evita duplicar)
     sectionCards.innerHTML = "";
 
@@ -88,6 +107,20 @@ if (inputPesquisa) {
         renderizarProdutos(produtosFiltrados);
     });
 }
+
+botoesCategoria.forEach(botao => {
+
+    botao.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        const categoria = botao.dataset.categoria;
+
+        filtrarCategoria(categoria);
+
+    });
+
+});
 
 // Inicializa a página mostrando todos os produtos originais
 renderizarProdutos(produtos);

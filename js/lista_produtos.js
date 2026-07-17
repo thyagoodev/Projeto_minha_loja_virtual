@@ -6,7 +6,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/corrente-grumet.jpg",
         id_secao: 1,
-        secao: "Correntes"
+        secao: "Masculino"
     },
 
     {
@@ -16,7 +16,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/correnete-3mm.png",
         id_secao: 1,
-        secao: "Correntes"
+        secao: "Masculino"
     },
 
     {
@@ -26,7 +26,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/correnete_3mm_80.png",
         id_secao: 1,
-        secao: "Correntes"
+        secao: "Masculino"
     },
 
     {
@@ -36,7 +36,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/corrente_4mm.png",
         id_secao: 1,
-        secao: "Correntes"
+        secao: "Masculino"
     },
 
     {
@@ -46,7 +46,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/corrente_4mm8.png",
         id_secao: 1,
-        secao: "Correntes"
+        secao: "Masculino"
     },
 
 
@@ -57,7 +57,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/correnete_6mm.png",
         id_secao: 1,
-        secao: "Correntes"
+        secao:"Masculino"
     },
 
     {
@@ -67,7 +67,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/kit-corrente.png",
         id_secao: 1,
-        secao: "Correntes"
+        secao:"Masculino"
     },
 
 
@@ -79,7 +79,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/corrente-veneziana.jpg",
         id_secao: 1,
-        secao: "Correntes"
+        secao: "Masculino"
     },
     {
         id_produto: 9,
@@ -88,7 +88,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/corrente-cartier.png",
         id_secao: 1,
-        secao: "Correntes"
+        secao:"Masculino"
     },
     {
         id_produto: 10,
@@ -97,7 +97,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/corrente-portugues.jpg",
         id_secao: 1,
-        secao: "Correntes"
+        secao: "Masculino"
     },
     {
         id_produto: 11,
@@ -115,7 +115,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/pulseira-grumet.jpg",
         id_secao: 2,
-        secao: "Pulseiras"
+        secao: "Feminino"
     },
     
     {
@@ -125,7 +125,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/pulseira-masculina.jpg",
         id_secao: 2,
-        secao: "Pulseiras"
+        secao: "Masculino"
     },
     
     {
@@ -135,7 +135,7 @@ const produtos = [
         unidade: "PAR",
         caminho_imagem: "imagens/argola-pequena.jpg",
         id_secao: 4,
-        secao: "Brincos"
+        secao: "Feminino"
     },
     {
         id_produto: 15,
@@ -144,7 +144,7 @@ const produtos = [
         unidade: "PAR",
         caminho_imagem: "imagens/argola-media.jpg",
         id_secao: 4,
-        secao: "Brincos"
+        secao: "Feminino"
     },
     
    
@@ -155,7 +155,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/pingente-cruz.jpg",
         id_secao: 5,
-        secao: "Pingentes"
+        secao: "Masculino"
     },
     {
         id_produto: 17,
@@ -164,19 +164,10 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/pingente-espirito-santo.jpg",
         id_secao: 5,
-        secao: "Pingentes"
+        secao: "Masculino"
     },
 
-    {
-        id_produto: 18,
-        descricao_produto: "limpa prata 35ml",
-        valor_unitario: 29.90,
-        unidade: "UN",
-        caminho_imagem: "imagens/limpa_prata3.png",
-        id_secao: 5,
-        secao: "Pingentes"
-    },
-
+    
     {
         id_produto: 19,
         descricao_produto: " Brincos zircônia 8mm Prata 925",
@@ -184,7 +175,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/brinco_8mm.png",
         id_secao: 5,
-        secao: "Brincos"
+        secao:  "Masculino"
     },
 
     {
@@ -194,7 +185,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/brinco10_mm.png",
         id_secao: 5,
-        secao: "Brincos"
+        secao:  "Masculino"
     },
 
     {
@@ -204,7 +195,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/argola.png",
         id_secao: 5,
-        secao: "Brincos"
+        secao:  "Masculino"
     },
 
     {
@@ -214,7 +205,7 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/argola10.png",
         id_secao: 5,
-        secao: "Brincos"
+        secao: "Masculino"
     },
 
     {
@@ -224,8 +215,30 @@ const produtos = [
         unidade: "UN",
         caminho_imagem: "imagens/argola11.png",
         id_secao: 5,
-        secao: "Brincos"
+        secao:  "Masculino"
     },
+
+    {
+        id_produto: 18,
+        descricao_produto: "limpa prata 35ml",
+        valor_unitario: 29.90,
+        unidade: "UN",
+        caminho_imagem: "imagens/limpa_prata3.png",
+        id_secao: 5,
+        secao:  "Masculino"
+    },
+
+
+    {
+        id_produto: 24,
+        descricao_produto: " Kit limpeza de Prata 925",
+        valor_unitario: 79.90,
+        unidade: "UN",
+        caminho_imagem: "imagens/franela_prata.png",
+        id_secao: 5,
+        secao:  "Masculino"
+    },
+
 
 
 ]; 

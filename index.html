@@ -20,7 +20,7 @@
         <header id="cabecalho">
 
             <div id="logo">
-                <h1>GUETO ITALLY 925</h1>
+                <h1>GUETO ITALLY 925 🇮🇹</h1>
             </div>
         
             <nav id="menu">
@@ -64,47 +64,53 @@
         </header>
         
         <nav id="menu_categoria">
+
+            <a href="#" data-categoria="todos">TODOS</a>
         
-            <a href="paginas/masculino.html">MASCULINO</a>
-            <a href="paginas/feminino.html">FEMININO</a>
-            <a href="paginas/aliancas.html">ALIANÇAS</a>
-            <a href="paginas/lancamentos.html">LANÇAMENTOS</a>
-            <a href="paginas/promocoes.html">PROMOÇÕES</a>
+            <a href="#" data-categoria="masculino">MASCULINO</a>
         
+            <a href="#" data-categoria="feminino">FEMININO</a>
+        
+            <a href="#" data-categoria="aliancas">ALIANÇAS</a>
+        
+            <a href="#" data-categoria="lancamentos">LANÇAMENTOS</a>
+        
+            <a href="#" data-categoria="promocoes">PROMOÇÕES</a>
+        
+        </nav>
         </nav>
         
         <section id="banner">
+            <!-- O vídeo fica no fundo -->
+            <video autoplay muted loop playsinline class="banner-video">
+                <source src="imagens/banner_video.png.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+        
+            <!-- Tudo que é texto e botão DEVE ficar aqui dentro -->
+            <div class="banner-overlay">
+                <h1>Gueto Itally 925</h1> <!-- (ou o título que você usa) -->
+                <h2>Sua marca de joias </h2> 
+                
+                <p>Elegância • Exclusividade • Qualidade</p>
+                
+                <a href="#cards" class="btn-banner">Conheça a Coleção</a>
+            </div>
+        </section>
+        
+        <!-- A pesquisa vem só DEPOIS que o banner fecha por completo -->
+        <section id="pesquisa">
+            <input type="text" placeholder="Pesquise seu produto...">
+        </section>
 
 
-    <div class="banner-overlay">
-
-        <h1>GUETO ITALLY</h1>
-
-        <h2>PRATS 925</h2>
-
-
-        <p>
-            Elegância • Exclusividade • Qualidade
-        </p>
-
-        <a href="#cards" class="btn-banner">
-            Conheça a Coleção
-        </a>
+       
 
     </div>
      
 </section>
 
-    <section id="pesquisa">
-
-    <div class="caixa-pesquisa">
-
-        
-        <input type="text" id="pesquisa" class="input-pesquisa" placeholder="Pesquise seu produto...">
-            type="text"
-            name="pesquisa"
-            id="pesquisaProduto"
-            class="input-pesquisa"
+   
             
 
     </div>

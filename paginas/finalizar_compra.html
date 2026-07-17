@@ -1,17 +1,12 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Finalizar Compra - Gueto Itally 925</title>
-
     <link rel="stylesheet" href="../css/style_estrutura_pagina.css">
     <link rel="stylesheet" href="../css/style_checkout.css">
-
 </head>
 
 <body>
@@ -19,24 +14,18 @@
 <main id="geral">
 
     <header id="cabecalho">
-
         <h1>Gueto Itally 925</h1>
-
         <nav>
             <a href="../index.html">Início</a>
             <a href="carrinho.html">Carrinho</a>
         </nav>
-
     </header>
 
     <section class="checkout">
-
         <div>
-
+            <!-- BLOCO: DADOS DO CLIENTE -->
             <div class="bloco">
-
                 <h2>Dados do Cliente</h2>
-
                 <label for="nome">Nome Completo</label>
                 <input type="text" id="nome" required>
 
@@ -45,104 +34,95 @@
 
                 <label for="telefone">Telefone</label>
                 <input type="tel" id="telefone" required>
-
             </div>
 
+            <!-- BLOCO: ENDEREÇO DE ENTREGA (CONECTADO AO VIA CEP) -->
             <div class="bloco">
-
                 <h2>Endereço de Entrega</h2>
 
                 <label for="cep">CEP</label>
-                <input type="text" id="cep" required>
+                <input type="text" id="cep" placeholder="00000-000" maxlength="9" required>
 
                 <label for="rua">Rua</label>
                 <input type="text" id="rua" required>
 
                 <div class="linha">
-
-                    <div style="flex:1;">
-
+                    <div style="flex:1; margin-right: 10px;">
                         <label for="numero">Número</label>
                         <input type="text" id="numero" required>
-
                     </div>
-
                     <div style="flex:1;">
-
                         <label for="bairro">Bairro</label>
                         <input type="text" id="bairro" required>
-
                     </div>
-
                 </div>
 
                 <div class="linha">
-
-                    <div style="flex:1;">
-
+                    <div style="flex:1; margin-right: 10px;">
                         <label for="cidade">Cidade</label>
-                        <input type="text" id="cidade" required>
-
+                        <input type="text" id="cidade" readonly required>
                     </div>
-
                     <div style="flex:1;">
-
                         <label for="estado">Estado</label>
-                        <input type="text" id="estado" required>
-
+                        <input type="text" id="estado" readonly required>
                     </div>
-
                 </div>
 
                 <label for="complemento">Complemento</label>
                 <input type="text" id="complemento">
-
             </div>
 
-            <div class="bloco">
+            <!-- BLOCO: PAGAMENTO -->
+<div class="bloco">
+    <h2>Forma de Pagamento</h2>
+    <select id="pagamento">
+        <option value="pix">Pix</option>
+        <option value="cartao_credito">Cartão de Crédito</option>
+        <option value="cartao_debito">Cartão de Débito</option>
+    </select>
 
-                <h2>Forma de Pagamento</h2>
+    <!-- Detalhes do Pix (Aparece por padrão se Pix for o primeiro) -->
+    <div id="detalhes-pix" class="info-pagamento" style="margin-top: 15px; text-align: center;">
+        <p><strong>Chave Pix Telefone.</strong> 79 99957-0973</p>
+        <p style="font-size: 13px; color: #666;">O QR Code ou chave Copia e Cola será gerado ao confirmar o pedido.</p>
+    </div>
 
-                <select id="pagamento">
+    <!-- Detalhes do Cartão (Começa escondido com display: none) -->
+    <div id="detalhes-cartao" class="info-pagamento" style="display: none; margin-top: 15px;">
+        <label for="numero_cartao">Número do Cartão</label>
+        <input type="text" id="numero_cartao" placeholder="0000 0000 0000 0000">
 
-                    <option>Pix</option>
-                    <option>Cartão de Crédito</option>
-                    <option>Cartão de Débito</option>
+        <label for="nome_cartao">Nome impresso no Cartão</label>
+        <input type="text" id="nome_cartao" placeholder="JOÃO S SILVA">
 
-                </select>
-
+        <div class="linha">
+            <div style="flex:1; margin-right: 10px;">
+                <label for="validade_cartao">Validade</label>
+                <input type="text" id="validade_cartao" placeholder="MM/AA" maxlength="5">
             </div>
-
+            <div style="flex:1;">
+                <label for="cvv_cartao">CVV</label>
+                <input type="text" id="cvv_cartao" placeholder="123" maxlength="4">
+            </div>
         </div>
+    </div>
+</div>
 
+        <!-- RESUMO DO PEDIDO -->
         <div class="resumo">
-
             <h2>Finalizar Pedido</h2>
-
             <p>
                 <span>Confira todas as informações antes de confirmar sua compra.</span>
             </p>
-
             <hr>
-
-            <button
-                id="confirmar"
-                type="button"
-                onclick="confirmarPedido()">
-
+            <button id="confirmar" type="button" onclick="confirmarPedido()">
                 Confirmar Pedido
-
             </button>
-
         </div>
-
     </section>
 
 </main>
 
-<script src="../js/checkout.js"></script>
-
+<script src="../js/checkout.js" defer></script>
 </body>
-
 </html>
-```
